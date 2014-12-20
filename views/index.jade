@@ -1,0 +1,49 @@
+- var readings = [{type:'temp', name: "Wine Cellar", entypo:"entypo-adjust",output:427}, {type:'moisture', name: "Office Plant", entypo:"entypo-droplet",output:100}, {type:"electricity", name: "Fridge", entypo:"entypo-flash",output:2},{type:'tilt', name: "Garage", entypo:"entypo-gauge", output: 'Open'}];
+
+doctype
+html.no-js
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='css/normalize.css')
+    link(rel='stylesheet', href='css/main.css')
+    //-script(src='javascripts/vendor/modernizr-2.7.1.min.js')
+  body
+    //- Add your site or application content here
+    p Test Layout 1
+    #container
+        //each reading in [ 429, 620, 28, 100, 989 ]
+        //each reading in [{type:'temp', entypo:"entypo-adjust",output:427}, {type:'moisture', entypo:"entypo-droplet",output:100}, {type:'electricity', entypo:"entypo-flash",output:2},{type:'tilt', entypo:"entypo-gauge", output: 'Open'}]
+        each reading in readings
+            .card(class=reading.type)
+                img(src="img/wine-cellar-temp.jpg")
+                .details
+                    .type(class=reading.entypo)
+                    h2= reading.output
+                    .info
+                        p.name= reading.name
+                        p.update-time 10 min ago
+        .card.new
+            .plus +
+            h3 
+                | Add a 
+                br
+                | new sensor
+
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.0.min.js"><\/script>')
+    //-script(src='javascripts/plugins.js')
+    //-script(src='javascripts/script.js')
+    //- Google Analytics: change UA-XXXXX-X to be your site's ID.
+    //-
+      script
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-XXXXX-X');ga('send','pageview');
