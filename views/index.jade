@@ -10,6 +10,7 @@ html.no-js
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='css/normalize.css')
     link(rel='stylesheet', href='css/main.css')
+    script(src="js/modernizr.custom.js")
     //-script(src='javascripts/vendor/modernizr-2.7.1.min.js')
   body
     //- Add your site or application content here
@@ -19,13 +20,14 @@ html.no-js
         //each reading in [{type:'temp', entypo:"entypo-adjust",output:427}, {type:'moisture', entypo:"entypo-droplet",output:100}, {type:'electricity', entypo:"entypo-flash",output:2},{type:'tilt', entypo:"entypo-gauge", output: 'Open'}]
         each reading in readings
             .card(class=reading.type)
-                img(src="img/wine-cellar-temp.jpg")
+                img(src="fridge_temp.jpg")
                 .details
                     .type(class=reading.entypo)
                     h2= reading.output
                     .info
                         p.name= reading.name
                         p.update-time 10 min ago
+            .morph-content
         .card.new
             .plus +
             h3 
@@ -33,7 +35,7 @@ html.no-js
                 br
                 | new sensor
 
-
+    script(src='js/uiMorphingButton_fixed.js')
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
     script window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.0.min.js"><\/script>')
     //-script(src='javascripts/plugins.js')
