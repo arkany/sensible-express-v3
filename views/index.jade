@@ -1,51 +1,216 @@
-- var readings = [{type:'temp', name: "Wine Cellar", entypo:"entypo-adjust",output:427}, {type:'moisture', name: "Office Plant", entypo:"entypo-droplet",output:100}, {type:"electricity", name: "Fridge", entypo:"entypo-flash",output:2},{type:'tilt', name: "Garage", entypo:"entypo-gauge", output: 'Open'}];
-
-doctype
-html.no-js
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    title
-    meta(name='description', content='')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='css/normalize.css')
-    link(rel='stylesheet', href='css/main.css')
-    script(src="js/modernizr.custom.js")
-    //-script(src='javascripts/vendor/modernizr-2.7.1.min.js')
+doctype html.no-js(lang='en')
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    |  
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    |  
+    title Blueprint: Google Grid Gallery
+    meta(name='description', content='Blueprint: Blueprint: Google Grid Gallery')
+    meta(name='keywords', content='google getting started gallery, image gallery, image grid, template, masonry')
+    meta(name='author', content='Codrops')
+    link(rel='shortcut icon', href='../favicon.ico')
+    link(rel='stylesheet', type='text/css', href='css/main.css')
+    //- link(rel='stylesheet', type='text/css', href='css/component.css')
+    script(src='js/modernizr.custom.js')
+  | 
   body
-    //- Add your site or application content here
-    p Test Layout 1
-    #container
-        //each reading in [ 429, 620, 28, 100, 989 ]
-        //each reading in [{type:'temp', entypo:"entypo-adjust",output:427}, {type:'moisture', entypo:"entypo-droplet",output:100}, {type:'electricity', entypo:"entypo-flash",output:2},{type:'tilt', entypo:"entypo-gauge", output: 'Open'}]
-        each reading in readings
-            .card(class=reading.type)
-                img(src="fridge_temp.jpg")
-                .details
-                    .type(class=reading.entypo)
-                    h2= reading.output
-                    .info
-                        p.name= reading.name
-                        p.update-time 10 min ago
-            .morph-content
-        .card.new
-            .plus +
-            h3 
-                | Add a 
-                br
-                | new sensor
+    .container
+      header.clearfix
+        span
+          | Sensible Living 
+          span.bp-icon.bp-icon-about(data-content='The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration.')
+        h1 Welcome
+        //- nav
+        //-   a.bp-icon.bp-icon-prev(href='http://tympanus.net/Blueprints/FullWidthTabs/', data-info='previous Blueprint')
+        //-     span Previous Blueprint
+        //-   // a href="" class="bp-icon bp-icon-next" data-info="next Blueprint"><span>Next Blueprint</span></a
+        //-   a.bp-icon.bp-icon-drop(href='http://tympanus.net/codrops/?p=18699', data-info='back to the Codrops article')
+        //-     span back to the Codrops article
+        //-   | 
+        //-   a.bp-icon.bp-icon-archive(href='http://tympanus.net/codrops/category/blueprints/', data-info='Blueprints archive')
+        //-     span Go to the archive
+      #grid-gallery.grid-gallery
+        section.grid-wrap
+          ul.grid
+            li.grid-sizer
+            // for Masonry column width
+            li
+              figure
+                img(src='img/thumb/1.png', alt='img01')
+                    figcaption
+                  h3 Letterpress asymmetrical
+                  p Chillwave hoodie ea gentrify aute sriracha consequat.
+            li
+              figure
+                img(src='img/thumb/2.png', alt='img02')
+                    figcaption
+                  h3 Vice velit chia
+                  p
+                    | Laborum tattooed iPhone, Schlitz irure nulla Tonx retro 90&apos;s chia cardigan quis asymmetrical paleo.
+            li
+              figure
+                img(src='img/thumb/3.png', alt='img03')
+                    figcaption
+                  h3 Brunch semiotics
+                  p
+                    | Ex disrupt cray yr, butcher pour-over magna umami kitsch before they sold out commodo.
+            li
+              figure
+                img(src='img/thumb/4.png', alt='img04')
+                    figcaption
+                  h3 Chillwave nihil occupy
+                  p In post-ironic gluten-free deserunt, PBR&amp;B non pork belly cupidatat polaroid. 
+            li
+              figure
+                img(src='img/thumb/5.png', alt='img05')
+                    figcaption
+                  h3 Kale chips lomo biodiesel
+                  p Pariatur food truck street art consequat sustainable, et kogi beard qui paleo. 
+            li
+              figure
+                img(src='img/thumb/6.png', alt='img06')
+                    figcaption
+                  h3 Exercitation occaecat
+                  p Street chillwave hoodie ea gentrify.
+            li
+              figure
+                img(src='img/thumb/1.png', alt='img01')
+                    figcaption
+                  h3 Selfies viral four
+                  p
+                    | Raw denim duis Tonx Shoreditch labore swag artisan High Life cred, stumptown Schlitz quinoa flexitarian mollit fanny pack.
+            li
+              figure
+                img(src='img/thumb/2.png', alt='img02')
+                    figcaption
+                  h3 Photo booth skateboard
+                  p
+                    | Vinyl squid ex High Life. Paleo Neutra nulla master cleanse, Helvetica et enim nesciunt esse.
+            li
+              figure
+                img(src='img/thumb/3.png', alt='img03')
+                    figcaption
+                  h3 Ex fashion axe
+                  p
+                    | Qui nesciunt et, in chia cliche irure. Eu YOLO nihil mollit twee locavore, tempor keytar asymmetrical irure aute sriracha consequat.
+            li
+              figure
+                img(src='img/thumb/4.png', alt='img04')
+                    figcaption
+                  h3 Thundercats next level
+                  p
+                    | Portland nulla butcher ea XOXO, consequat Bushwick Pinterest elit twee pickled direct trade vero.
+            li
+              figure
+                img(src='img/thumb/5.png', alt='img05')
+                    figcaption
+                  h3 Bushwick selvage synth
+                  p
+                    | Bicycle rights flannel Shoreditch, art party laboris Bushwick sriracha authentic chambray hella umami sed distillery master cleanse.
+        // // grid-wrap
+        section.slideshow
+          ul
+            li
+              figure
+                figcaption
+                  h3 Letterpress asymmetrical
+                        p
+                    | Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.
+                    img(src='img/large/1.png', alt='img01')
+            li
+              figure
+                figcaption
+                  h3 Vice velit chia
+                        p
+                    | Chillwave Echo Park Etsy organic Cosby sweater seitan authentic pour-over. Occupy wolf selvage bespoke tattooed, cred sustainable Odd Future hashtag butcher.
+                    img(src='img/large/2.png', alt='img02')
+            li
+              figure
+                figcaption
+                  h3 Brunch semiotics
+                        p
+                    | IPhone PBR polaroid before they sold out meh you probably haven&apos;t heard of them leggings tattooed tote bag, butcher paleo next level single-origin coffee photo booth.
+                    img(src='img/large/3.png', alt='img03')
+            li
+              figure
+                figcaption
+                  h3 Chillwave nihil occupy
+                        p
+                    | Vice cliche locavore mumblecore vegan wayfarers asymmetrical letterpress hoodie mustache. Shabby chic lomo polaroid, scenester 8-bit Portland Pitchfork VHS tote bag.
+                    img(src='img/large/4.png', alt='img04')
+            li
+              figure
+                figcaption
+                  h3 Kale chips lomo biodiesel
+                        p
+                    | Chambray Schlitz pug YOLO, PBR Tumblr semiotics. Flexitarian YOLO ennui Blue Bottle, forage dreamcatcher chillwave put a bird on it craft beer Etsy.
+                    img(src='img/large/5.png', alt='img05')
+            li
+              figure
+                figcaption
+                  h3 Exercitation occaecat
+                        p
+                    | Cosby sweater hella lomo Thundercats VHS occupy High Life. Synth pop-up readymade single-origin coffee, fanny pack tousled retro. Fingerstache mlkshk ugh hashtag, church-key ethnic street art pug yr.
+                    img(src='img/large/6.png', alt='img06')
+            li
+              figure
+                figcaption
+                  h3 Selfies viral four
+                        p
+                    | Viral roof party locavore flexitarian nihil fanny pack actually Odd Future anim commodo. Sunt yr aute, enim quis plaid sartorial duis leggings lo-fi gluten-free. Tote bag flexitarian pug stumptown, Cosby sweater try-hard ethnic scenester. Mumblecore +1 hoodie accusamus skateboard slow-carb, Thundercats Godard placeat craft beer meh enim trust fund.
+                    img(src='img/large/1.png', alt='img01')
+            li
+              figure
+                figcaption
+                  h3 Photo booth skateboard
+                        p
+                    | Culpa pour-over cray nesciunt dreamcatcher. Meggings distillery cillum raw denim voluptate, single-origin coffee lo-fi ethical iPhone four loko nihil salvia. Biodiesel ea Intelligentsia quis deep v, American Apparel trust fund slow-carb synth semiotics quinoa Brooklyn pour-over nulla Godard.
+                    img(src='img/large/2.png', alt='img02')
+            li
+              figure
+                figcaption
+                  h3 Ex fashion axe
+                        p
+                    | Bespoke irony tousled nihil flexitarian, salvia tempor nostrud Bushwick hashtag Austin ethnic disrupt. Beard Helvetica nihil, chia craft beer Wes Anderson keytar dolore. Irure incididunt flexitarian photo booth cillum, YOLO deserunt Brooklyn artisan. Brunch assumenda irony, Blue Bottle roof party DIY ullamco quis.
+                    img(src='img/large/3.png', alt='img03')
+            li
+              figure
+                figcaption
+                  h3 Thundercats next level
+                        p
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+                    img(src='img/large/4.png', alt='img04')
+            li
+              figure
+                figcaption
+                  h3 Bushwick selvage synth
+                        p
+                    | Ethical Truffaut tofu food truck cred cornhole. Irure umami Austin cornhole blog ethical. Aliqua yr Truffaut, adipisicing hashtag Shoreditch eiusmod tempor literally vinyl.
+                    img(src='img/large/5.png', alt='img05')
+            li
+              figure
+                figcaption
+                  h3 Bottle wayfarers locavore
+                        p
+                    | Pork belly irony Shoreditch fashion axe DIY. Portland banjo irony, squid gentrify Austin fixie church-key magna. Marfa artisan Echo Park, McSweeney&apos;s banjo sunt keytar tofu. Brooklyn PBR single-origin coffee disrupt polaroid ut, gluten-free XOXO plaid magna.
+                    img(src='img/large/1.png', alt='img01')
+          | 
+          nav
+            span.icon.nav-prev
+            span.icon.nav-next
+            span.icon.nav-close
+          | 
+          .info-keys.icon Navigate with arrow keys
+        // // slideshow
+      // // grid-gallery
+    | 
+    script(src='js/imagesloaded.pkgd.min.js')
+    script(src='js/masonry.pkgd.min.js')
+    script(src='js/classie.js')
+    script(src='js/cbpGridGallery.js')
+    script.
+      new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 
-    script(src='js/uiMorphingButton_fixed.js')
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
-    script window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.0.min.js"><\/script>')
-    //-script(src='javascripts/plugins.js')
-    //-script(src='javascripts/script.js')
-    //- Google Analytics: change UA-XXXXX-X to be your site's ID.
-    //-
-      script
-        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-        e.src='//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-XXXXX-X');ga('send','pageview');

@@ -1,0 +1,140 @@
+/*-------- Default card styling --------*/
+.card{
+    position:relative;
+    height:350px;
+    width:240px;
+    border-radius: 4px;
+    background-color: #ccc;
+    box-shadow: 0px 0px 10px rgba($black,0.1);
+    float:left;
+    margin-right: 10px;
+    margin-bottom:10px;
+    //border: 2px solid;
+    //opacity: 0.92;
+    -webkit-transition: box-shadow 200ms linear;
+
+    &:hover{
+        //opacity:1;
+        box-shadow: 0px 0px 10px rgba($black,0.3);
+    }
+    &:nth-child(4n){
+        margin-right:0;
+    }
+    img{
+        height: inherit;
+        width: inherit;
+        border-radius: 5px;
+        position: absolute;
+        z-index: 0;
+    }
+    .type{
+        border-radius:50%;
+        height:50px;
+        width:50px;
+        background-color:white;
+        border: 2px solid white;
+        margin: -25px 20px 0;
+        color: $white;
+    }
+    .details{
+        position: absolute;
+        z-index:10;
+        background-color: rgba($black, 0.6);
+        bottom:0;
+        border-top:2px solid white;
+        height:100px;
+        width:240px;
+        color: $white;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        h2{
+            font-family: 'Playfair Display';
+            font-weight:900;
+            font-style: italic;
+            font-size:48px;
+            float:left;
+            margin:0 20px;
+            width: 75px;
+            line-height: 48px;
+            text-align:center;
+        }
+        .info{
+            margin-top:10px;
+            .name,
+            .update-time {
+                margin:5px;
+            }    
+        }
+    }
+}
+
+/*-------- Card types - add to .card class --------*/
+.temp{
+    .details{
+         border-color: $blue;
+    }
+    .type{
+        background-color:$blue;
+        border-color: $blue;
+    }
+}
+
+.moisture{
+    .details{
+         border-color: $green;
+    }
+    .type{
+        background-color:$green;
+        border-color: $green;
+    }
+}
+
+.tilt{
+    .details{
+         border-color: $red;
+    }
+    .type{
+        background-color:$red;
+        border-color: $red;
+    }
+    h2{
+        font-size:30px !important;
+    }
+}
+
+.electricity{
+    .details{
+         border-color: $orange;
+    }
+    .type{
+        background-color:$orange;
+        border-color: $orange;
+    }
+}
+
+.multi-sensor{
+
+}
+/*-------- Add a Card --------*/
+.new{
+    opacity:0.4;
+    -webkit-transition: opacity 300ms ease-out;
+
+    &:hover, &:active{
+        opacity:1;
+    }
+    .plus{
+        display: none;
+        width:100%;
+        text-align:center;
+        font-size: 60px;
+        font-weight:100;
+        margin-top: 50px;
+        @include font-playfair(60px)
+    }
+    h3{
+        margin-top:100px;
+        text-align:center;
+        @include font-playfair(36px);
+    }
+}
