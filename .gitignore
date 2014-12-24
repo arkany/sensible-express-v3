@@ -2,6 +2,9 @@
 public/file.txt
 
 node_modules/*
+.sass-cache/*
+public/css/*.map
+*.map
 
 express-examples/*
 

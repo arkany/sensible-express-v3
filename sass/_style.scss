@@ -1,0 +1,60 @@
+$bg-color: #edebe4;
+$white: #fff;
+$black: #000;
+
+/* ----- Card Colors -----*/
+
+$blue: #649ffd;
+$green: #BED547;
+$red: #d84777;
+$orange: #e0981b;
+$purple: #cca8e4;
+
+$card-width: 240px;
+
+@mixin font-playfair($font-size){
+    font: italic 900 #{$font-size}/1.2em 'Playfair Display', serif;
+}
+$font-fairplay: italic 900 36px/1.2em 'Playfair Display', serif;
+
+
+/* Entype Icon Fonts - Temp Use*/
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+    display: block;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    margin:-2px;
+}
+
+/* normalize all the box sizing across browsers */
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+
+/*-------- General Content --------*/
+body{
+    background-color: $bg-color;
+    font-family: 'Helvetica', Arial, sans-serif;
+    text-rendering:optimizeLegibility;
+}
+
+#container{
+    width: 1000px;
+    height:100%;
+    margin:0 auto;
+}
+
+

@@ -1,49 +1,131 @@
 - var readings = [{type:'temp', name: "Wine Cellar", entypo:"entypo-adjust",output:427}, {type:'moisture', name: "Office Plant", entypo:"entypo-droplet",output:100}, {type:"electricity", name: "Fridge", entypo:"entypo-flash",output:2},{type:'tilt', name: "Garage", entypo:"entypo-gauge", output: 'Open'}];
 
-doctype
-html.no-js
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    title
-    meta(name='description', content='')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='css/normalize.css')
-    link(rel='stylesheet', href='css/main.css')
-    //-script(src='javascripts/vendor/modernizr-2.7.1.min.js')
+
+doctype html.no-js(lang='en')
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    title Sensible Living
+    meta(name='description', content='Sensible Living - Card View')
+    meta(name='keywords', content='smart home, sensors, sensible, sensible living')
+    meta(name='author', content='David Phillips')
+    link(rel='shortcut icon', href='../favicon.ico')
+    link(rel='stylesheet', type='text/css', href='css/main.css')
+    link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", rel="stylesheet")
+    //-link(rel='stylesheet', type='text/css', href='css/component.css')
+    script(src='js/modernizr.custom.js')
+    
+    // chartist.js
+    script(src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
+    link(href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css", rel="stylesheet", type="text/css")
+    script
+
   body
-    //- Add your site or application content here
-    p Test Layout 1
-    #container
-        //each reading in [ 429, 620, 28, 100, 989 ]
-        //each reading in [{type:'temp', entypo:"entypo-adjust",output:427}, {type:'moisture', entypo:"entypo-droplet",output:100}, {type:'electricity', entypo:"entypo-flash",output:2},{type:'tilt', entypo:"entypo-gauge", output: 'Open'}]
-        each reading in readings
-            .card(class=reading.type)
-                img(src="img/wine-cellar-temp.jpg")
-                .details
-                    .type(class=reading.entypo)
-                    h2= reading.output
-                    .info
-                        p.name= reading.name
-                        p.update-time 10 min ago
-        .card.new
-            .plus +
-            h3 
-                | Add a 
-                br
-                | new sensor
+    .container
+      header.clearfix
+        span
+          | Sensible Living
 
+        h1 Welcome! 
 
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
-    script window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.0.min.js"><\/script>')
-    //-script(src='javascripts/plugins.js')
-    //-script(src='javascripts/script.js')
-    //- Google Analytics: change UA-XXXXX-X to be your site's ID.
-    //-
-      script
-        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-        e.src='//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-XXXXX-X');ga('send','pageview');
+        //- nav
+        //-   a.bp-icon.bp-icon-prev(href='/', data-info='Floorplan View')
+        //-     span Floorplan view?
+        //-   a.bp-icon.bp-icon-drop(href='/', data-info='Settings')
+        //-     span Settings?
+        //-   a.bp-icon.bp-icon-archive(href='/', data-info='Dunno')
+        //-     span No clue
+      | 
+      #grid-gallery.grid-gallery
+        section.grid-wrap
+          ul.grid
+            li.grid-sizer
+            // for Masonry column width
+            each card in readings
+              include card.jade
+            li
+              figure
+                img(src='img/thumb/1.png', alt='img01')
+                | 
+                figcaption
+                  h3 Letterpress asymmetrical
+                  p Chillwave hoodie ea gentrify aute sriracha consequat.
+            li
+              figure
+                img(src='img/thumb/2.png', alt='img02')
+                figcaption
+                  h3 Photo booth skateboard
+                  p
+                    | Vinyl squid ex High Life. Paleo Neutra nulla master cleanse, Helvetica et enim nesciunt esse.
+        // // grid-wrap
+        section.slideshow
+          ul
+            each card in readings
+              li
+                figure
+                  figcaption
+                    h3= card.name
+                    p= card.output
+                  //img(src="img/wine_cellar_temp2.jpg")
+                  .ct-chart
+                  .buttons(class= card.type)
+                    button.entypo-mail.is-on
+                    button.entypo-phone.is-on
+                    button.entypo-chat.is-off
+                    button.entypo-monitor.is-off
+
+            li
+              figure
+                figcaption
+                  h3 Letterpress asymmetrical
+                  p
+                    | Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.
+                | 
+                img(src='img/large/1.png', alt='img01')
+            li
+              figure
+                figcaption
+                  h3 Vice velit chia
+                  p
+                    | Chillwave Echo Park Etsy organic Cosby sweater seitan authentic pour-over. Occupy wolf selvage bespoke tattooed, cred sustainable Odd Future hashtag butcher.
+                | 
+                img(src='img/large/2.png', alt='img02')
+            li
+              figure
+                figcaption
+                  h3 Brunch semiotics
+                  p
+                    | IPhone PBR polaroid before they sold out meh you probably haven&apos;t heard of them leggings tattooed tote bag, butcher paleo next level single-origin coffee photo booth.
+                | 
+                img(src='img/large/3.png', alt='img03')
+          nav
+            span.entypo-left-open-big.nav-prev
+            span.entypo-right-open-big.nav-next
+            span.entypo-cancel.nav-close
+          | 
+          .info-keys.icon Navigate with arrow keys
+        // // slideshow
+      // // grid-gallery
+
+    script(src='js/imagesloaded.pkgd.min.js')
+    script(src='js/masonry.pkgd.min.js')
+    script(src='js/classie.js')
+    script(src='js/cbpGridGallery.js')
+    script.
+      new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+
+      new Chartist.Line('.ct-chart', {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+        series: [
+          [2, 3, 2, 4, 5],
+          [0, 2.5, 3, 2, 3],
+          [1, 2, 2.5, 3.5, 4]
+        ]
+      }, {
+        width: 500,
+        height: 300,
+        showArea: true
+      });

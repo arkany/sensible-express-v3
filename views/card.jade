@@ -1,0 +1,19 @@
+li.card(class="#{card.type}")
+    figure
+        img(src="img/wine_cellar_square.jpg")
+        .details
+            .type(class= card.entypo)
+            h2= card.output
+            .info
+                p.name= card.name
+                p.update-time 10 min ago
+
+//- li.card(class="type")
+//-     figure
+//-         img(src="img/fridge_temp.jpg")
+//-         .details
+//-             .type(class="entypo")
+//-             h2= card
+//-             .info
+//-                 p.name= reading.name
+//-                 p.update-time= reading.index
