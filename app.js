@@ -1,12 +1,10 @@
 var express = require('express'),
 	sass 	= require('node-sass'),
+  fs = require('fs'),
 	app		= express();
 
-
-// app.route('/')
-// 	.get(function(req, res){
-// 		res.render('index.jade');
-// 	});
+var testJSON = fs.readFileSync('./test.json');
+testJSON = JSON.parse(testJSON);
 
 //built in middleware
 app.use(express.static('./public'));
@@ -26,7 +24,8 @@ sass.renderFile({
 });
 
 app.get('/', function(req, res){
-	res.render('index.jade');
+    res.render('index.jade', {readings: testJSON});
+
 });
 
 app.listen(3000);
