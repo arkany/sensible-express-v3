@@ -282,7 +282,6 @@ a:hover {
   width: 100%;
   height: 100%;
   background: #fff;
-  border: 50px solid #fff;
   overflow: hidden; }
 
 .slideshow figcaption {
@@ -443,14 +442,10 @@ body {
   width: inherit;
   color: #fff; }
   .card .details h2 {
-    font-family: 'Playfair Display';
-    font-weight: 900;
-    font-style: italic;
-    font-size: 48px;
+    font: italic 900 48px/1.2em 'Playfair Display', serif;
     float: left;
     margin: 0 20px;
     width: 75px;
-    line-height: 48px;
     text-align: center; }
   .card .details .info {
     margin-top: 10px; }
@@ -459,6 +454,8 @@ body {
 
 /*-------- Expanded Cards --------*/
 .buttons button {
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   border: 0px solid #fff;
   margin-left: 10px;
@@ -468,6 +465,47 @@ body {
     background-color: #992048; }
   .buttons button.is-off {
     background-color: #829422; }
+
+.detail figure {
+  position: relative; }
+  .detail figure .detail-info {
+    height: 120px;
+    border-bottom: 1px solid #ccc; }
+    .detail figure .detail-info .detail-image {
+      height: 120px;
+      width: 120px;
+      background-size: cover;
+      background-color: #000;
+      position: relative;
+      float: left; }
+      .detail figure .detail-info .detail-image h1 {
+        background: rgba(0, 0, 0, 0.4);
+        font: italic 900 40px/1.2em 'Playfair Display', serif;
+        color: #fff;
+        height: 120px;
+        width: 120px;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        line-height: 0;
+        margin: 0;
+        padding: 85px 8px 5px; }
+    .detail figure .detail-info h3 {
+      float: left;
+      font: italic 900 40px/1.2em 'Playfair Display', serif; }
+  .detail figure .ct-chart {
+    margin-top: 20px;
+    margin-left: 5px; }
+  .detail figure .detail-actions {
+    background-color: #ccc;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 100px; }
+    .detail figure .detail-actions .buttons {
+      float: left; }
+    .detail figure .detail-actions .sensor-info {
+      float: right; }
 
 /*-------- Card types - add to .card class --------*/
 .temp .details {

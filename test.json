@@ -1,4 +1,4 @@
-[  
+{  
    {  
       type:"temp",
       name:"Wine Cellar",
@@ -27,4 +27,4 @@
       img: "img/garage_door_temp.jpg",
       output:"Open"
    }
-];
+};

@@ -1,6 +1,5 @@
 - var readings = [{type:'temp', name: "Wine Cellar", entypo:"entypo-adjust",output:427}, {type:'moisture', name: "Office Plant", entypo:"entypo-droplet",output:100}, {type:"electricity", name: "Fridge", entypo:"entypo-flash",output:2},{type:'tilt', name: "Garage", entypo:"entypo-gauge", output: 'Open'}];
 
-
 doctype html.no-js(lang='en')
 head
     meta(charset='UTF-8')
@@ -64,18 +63,19 @@ head
         section.slideshow
           ul
             each card in readings
-              li
-                figure
-                  figcaption
-                    h3= card.name
-                    p= card.output
-                  //img(src="img/wine_cellar_temp2.jpg")
-                  .ct-chart
-                  .buttons(class= card.type)
-                    button.entypo-mail.is-on
-                    button.entypo-phone.is-on
-                    button.entypo-chat.is-off
-                    button.entypo-monitor.is-off
+              include detail.jade
+              //- li.type
+              //-   figure
+              //-     figcaption
+              //-       h3= card.name
+              //-       p= card.output
+              //-     //img(src="img/wine_cellar_temp2.jpg")
+              //-     .ct-chart
+              //-     .buttons(class= card.type)
+              //-       button.entypo-mail.is-on
+              //-       button.entypo-phone.is-on
+              //-       button.entypo-chat.is-off
+              //-       button.entypo-monitor.is-off
 
             li
               figure
@@ -125,7 +125,7 @@ head
           [1, 2, 2.5, 3.5, 4]
         ]
       }, {
-        width: 500,
-        height: 300,
+        width: 630,
+        height: 250,
         showArea: true
       });
