@@ -3,7 +3,10 @@ li.detail.type
     .detail-info
       .detail-image(style="background-image: url('img/wine_cellar_square.jpg')")
         h1= card.output
-      h3= card.name
+      .detail-metadata
+        h3= card.name
+        p.last-updated 10 minutes ago
+        p.sensor-type Moisture Sensor
       
     .ct-chart
     .detail-actions

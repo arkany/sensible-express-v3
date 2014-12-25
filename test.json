@@ -1,30 +1,35 @@
-{  
-   {  
-      type:"temp",
-      name:"Wine Cellar",
-      entypo:"entypo-adjust",
-      img: "img/wine_cellar_temp.jpg",
-      output:427
+[ 
+   {
+      "id":1,
+      "type":"temp",
+      "name":"Wine Cellar",
+      "entypo":"entypo-adjust",
+      "img": "img/wine_cellar_temp.jpg",
+      "output":427
    },
    {  
-      type:"moisture",
-      name:"Office Plant",
-      entypo:"entypo-droplet",
-      img: "img/plant_temp.jpg",
-      output:100
+      "id":2,  
+      "type":"moisture",
+      "name":"Office Plant",
+      "entypo":"entypo-droplet",
+      "img": "img/plant_temp.jpg",
+      "output":100
    },
    {  
-      type:"electricity",
-      name:"Fridge",
-      entypo:"entypo-flash",
-      img: "img/fridge_temp.jpg",
-      output:2
+      "id":3,
+      "type":"electricity",
+      "name":"Fridge",
+      "entypo":"entypo-flash",
+      "img": "img/fridge_temp.jpg",
+      "output":2
    },
    {  
-      type:"tilt",
-      name:"Garage",
-      entypo:"entypo-gauge",
-      img: "img/garage_door_temp.jpg",
-      output:"Open"
+      "id":4,
+      "type":"tilt",
+      "name":"Garage",
+      "entypo":"entypo-gauge",
+      "img": "img/garage_door_temp.jpg",
+      "output":"Open"
    }
-};
+
+]

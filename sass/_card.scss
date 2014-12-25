@@ -76,40 +76,13 @@ $white: #fff;
     }
 }
 
-$detail-info-height: 120px; 
+$detail-info-height: 200px; 
 
 .detail figure{
     position: relative;
     .detail-info{
         height:$detail-info-height;
         border-bottom:1px solid #ccc;
-        .detail-image{
-            height:$detail-info-height;
-            width:$detail-info-height;
-            background-size: cover;
-            background-color: $black;
-            position:relative;
-            float:left;
-            h1{
-                background:rgba($black, 0.4);
-                @include font-playfair(40px);
-                color: $white;
-                height:$detail-info-height;
-                width:$detail-info-height;
-                position: absolute;
-                bottom:0px;
-                left:0px;
-                line-height:0;
-                margin:0;
-                padding:85px 8px 5px;
-
-            }
-        }
-        h3{
-            float:left;
-            @include font-playfair(40px);
-
-        }
     }
     .ct-chart{
         margin-top:20px;
@@ -121,14 +94,44 @@ $detail-info-height: 120px;
         position: absolute;
         bottom:0;
         height:100px;
+    }
+}
+
+.detail-info{
+    .detail-image{
+        height:$detail-info-height;
+        width:$detail-info-height;
+        background-size: cover;
+        background-color: $black;
+        position:relative;
+        float:left;
+        h1{
+            background:rgba($red, 0.4);
+            @include font-playfair(60px);
+            color: $white;
+            height:$detail-info-height;
+            width:$detail-info-height;
+            position: absolute;
+            line-height:0;
+            margin:0;
+            padding-top:$detail-info-height/2.2;
+            text-align:center;
+
+        }
+    }
+    h3{
+        float:left;
+        @include font-playfair(40px);
+    }
+}
+
+.detail-actions{
         .buttons{
             float:left;
         }
         .sensor-info{
             float:right;
         }
-    }
-
 }
 
 

@@ -1,4 +1,4 @@
-- var readings = [{type:'temp', name: "Wine Cellar", entypo:"entypo-adjust",output:427}, {type:'moisture', name: "Office Plant", entypo:"entypo-droplet",output:100}, {type:"electricity", name: "Fridge", entypo:"entypo-flash",output:2},{type:'tilt', name: "Garage", entypo:"entypo-gauge", output: 'Open'}];
+//- var readings = [{type:'temp', name: "Wine Cellar", entypo:"entypo-adjust",output:427}, {type:'moisture', name: "Office Plant", entypo:"entypo-droplet",output:100}, {type:"electricity", name: "Fridge", entypo:"entypo-flash",output:2},{type:'tilt', name: "Garage", entypo:"entypo-gauge", output: 'Open'}];
 
 doctype html.no-js(lang='en')
 head
@@ -52,31 +52,11 @@ head
                 figcaption
                   h3 Letterpress asymmetrical
                   p Chillwave hoodie ea gentrify aute sriracha consequat.
-            li
-              figure
-                img(src='img/thumb/2.png', alt='img02')
-                figcaption
-                  h3 Photo booth skateboard
-                  p
-                    | Vinyl squid ex High Life. Paleo Neutra nulla master cleanse, Helvetica et enim nesciunt esse.
         // // grid-wrap
         section.slideshow
           ul
             each card in readings
               include detail.jade
-              //- li.type
-              //-   figure
-              //-     figcaption
-              //-       h3= card.name
-              //-       p= card.output
-              //-     //img(src="img/wine_cellar_temp2.jpg")
-              //-     .ct-chart
-              //-     .buttons(class= card.type)
-              //-       button.entypo-mail.is-on
-              //-       button.entypo-phone.is-on
-              //-       button.entypo-chat.is-off
-              //-       button.entypo-monitor.is-off
-
             li
               figure
                 figcaption
@@ -85,22 +65,6 @@ head
                     | Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.
                 | 
                 img(src='img/large/1.png', alt='img01')
-            li
-              figure
-                figcaption
-                  h3 Vice velit chia
-                  p
-                    | Chillwave Echo Park Etsy organic Cosby sweater seitan authentic pour-over. Occupy wolf selvage bespoke tattooed, cred sustainable Odd Future hashtag butcher.
-                | 
-                img(src='img/large/2.png', alt='img02')
-            li
-              figure
-                figcaption
-                  h3 Brunch semiotics
-                  p
-                    | IPhone PBR polaroid before they sold out meh you probably haven&apos;t heard of them leggings tattooed tote bag, butcher paleo next level single-origin coffee photo booth.
-                | 
-                img(src='img/large/3.png', alt='img03')
           nav
             span.entypo-left-open-big.nav-prev
             span.entypo-right-open-big.nav-next
