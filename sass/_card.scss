@@ -6,6 +6,11 @@ $red: #d84777;
 $orange: #e0981b;
 $purple: #cca8e4;
 $white: #fff;
+$gray: #6e737c;
+$clear: rgba(0,0,0,0);
+
+$on: #40c88b;
+$off: #ff3939;
 
 //$card-width: 240px;
 
@@ -15,42 +20,56 @@ $white: #fff;
     &:hover{
     }
     img{
+
     }
     .type{
-        border-radius:50%;
-        height:50px;
-        width:50px;
+        height:65px;
+        width:65px;
         background-color:white;
-        border: 2px solid white;
-        margin: -25px 20px 0;
+        border: 0px solid white;
         color: $white;
-    }
-    .details{
-        z-index:10;
-        background-color: rgba($black, 0.6);
-        bottom:0;
-        border-top:2px solid white;
-        height:100px;
-        width:inherit;
-        color: $white;
+        position:relative;
+        float:left;
+        &:before{
+            opacity:0.2;
+            max-width:65px;
+            overflow:hidden;
+            margin:7px;
+            font-size:45px;
+        }
         h2{
-            @include font-playfair(48px);
-            // font-family: 'Playfair Display';
-            // font-weight:900;
-            // font-style: italic;
-            // font-size:48px;
+            position: absolute;
+            @include font-oswald(35px);
+
+            //@include font-playfair(30px);
+            top:0;
             float:left;
-            margin:0 20px;
-            width: 75px;
-            //line-height: 48px;
+            margin:0;
+            padding-top:10px;
+            width: 65px;
             text-align:center;
         }
+
+    }
+    .details{
+        background-color: $white;
+        bottom:0;
+        border-top:0px solid white;
+        height:65px;
+        width:inherit;
+        color: $white;
         .info{
-            margin-top:10px;
+            padding:10px;
+            float: left;
+            color: $gray;
             .name,
             .update-time {
-                margin:5px;
-            }    
+                margin:0px;
+            } 
+            .name{
+                font-size:18px;
+                margin-top:2px;
+            }   
         }
     }
 }
@@ -58,19 +77,29 @@ $white: #fff;
 /*-------- Expanded Cards --------*/
 
 .buttons{
+    padding: 12px 0 0 30px;
     button{
+        -webkit-tap-highlight-color: $clear;
+        outline: 0px solid $clear;
         height:60px;
         width:60px;
         border-radius:50%;
         border:0px solid $white;
-        margin-left: 10px;
+        margin-right: 20px;
         color: $white;
         background-color: #ccc;
+        padding:7px;
         &.is-on{
-            background-color: darken($red, 20%);
+            background-color: $on;
+            &:active{
+                background-color: darken($on, 12%);
+            }
         }
         &.is-off{
-            background-color: darken($green, 20%);
+            background-color: $off;
+            &:active{
+                background-color: darken($off, 20%);
+            }
         }
 
     }
@@ -82,14 +111,12 @@ $detail-info-height: 200px;
     position: relative;
     .detail-info{
         height:$detail-info-height;
-        border-bottom:1px solid #ccc;
     }
     .ct-chart{
         margin-top:20px;
         margin-left:5px;
     }
     .detail-actions{
-        background-color: #ccc;
         width:100%;
         position: absolute;
         bottom:0;
@@ -106,22 +133,36 @@ $detail-info-height: 200px;
         position:relative;
         float:left;
         h1{
-            background:rgba($red, 0.4);
-            @include font-playfair(60px);
+            //@include font-playfair(60px);
+            @include font-oswald(100px);
             color: $white;
             height:$detail-info-height;
             width:$detail-info-height;
             position: absolute;
             line-height:0;
             margin:0;
-            padding-top:$detail-info-height/2.2;
+            padding-top:$detail-info-height/2.1;
             text-align:center;
 
         }
     }
+    .detail-metadata{
+        float:left;
+        padding:20px;
+        color:$white;
+    }
     h3{
         float:left;
-        @include font-playfair(40px);
+        //@include font-playfair(40px);
+        @include font-oswald(40px);
+        margin: 0 0 5px 0;
+    }
+    p{
+        margin-top:0;
+        margin-bottom:6px;
+        &.sensor-type::first-letter{
+            text-transform: uppercase;
+        }
     }
 }
 
@@ -136,47 +177,53 @@ $detail-info-height: 200px;
 
 
 /*-------- Card types - add to .card class --------*/
-.temp{
-    .details{
-         border-color: $blue;
+@mixin card-type($card-color){
+    $color-opposite: adjust_hue($card-color, 135);
+    //cards
+    img{
+        background-color: $card-color;
     }
     .type{
-        background-color:$blue;
-        border-color: $blue;
+        //background-color:$card-color;
+        @include linear-gradient($card-color, darken($card-color, 10%));
     }
+    .update-time{
+        color: $card-color;
+    }
+    //detail
+    .detail-image h1{
+        background: rgba($color-opposite, 0.5);
+        text-shadow: 0px 0px 20px rgba($black, 0.2);
+    }
+    .detail-info{
+        @include linear-gradient($card-color, darken($card-color, 10%));
+
+    }
+}
+
+.temperature{
+    @include card-type($blue);
+
 }
 
 .moisture{
-    .details{
-         border-color: $green;
-    }
-    .type{
-        background-color:$green;
-        border-color: $green;
-    }
+    @include card-type($green);
 }
 
 .tilt{
-    .details{
-         border-color: $red;
-    }
-    .type{
-        background-color:$red;
-        border-color: $red;
-    }
+    @include card-type($red);
     h2{
-        font-size:30px !important;
+        padding-top:20px !important;
+        font-size:18px !important;
+        text-transform: uppercase;
+    }
+    h1{
+        font-size:70px!important;
     }
 }
 
 .electricity{
-    .details{
-         border-color: $orange;
-    }
-    .type{
-        background-color:$orange;
-        border-color: $orange;
-    }
+    @include card-type($orange);
 }
 
 .multi-sensor{

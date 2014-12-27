@@ -15,7 +15,9 @@ $card-width: 240px;
 @mixin font-playfair($font-size){
     font: italic 900 #{$font-size}/1.2em 'Playfair Display', serif;
 }
-$font-fairplay: italic 900 36px/1.2em 'Playfair Display', serif;
+@mixin font-oswald($font-size){
+    font: normal 400 #{$font-size}/1.3em 'Oswald', sans-serif;
+}
 
 
 /* Entype Icon Fonts - Temp Use*/
@@ -47,7 +49,7 @@ $font-fairplay: italic 900 36px/1.2em 'Playfair Display', serif;
 /*-------- General Content --------*/
 body{
     background-color: $bg-color;
-    font-family: 'Helvetica', Arial, sans-serif;
+    font-family: 'Raleway','Helvetica', Arial, sans-serif;
     text-rendering:optimizeLegibility;
 }
 

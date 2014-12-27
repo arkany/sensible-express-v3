@@ -1,5 +1,6 @@
 var express = require('express'),
 	sass 	= require('node-sass'),
+  //bourbon = require('node-bourbon'),
   fs = require('fs'),
 	app		= express();
 
@@ -13,14 +14,17 @@ app.use(express.static('./public'));
 sass.renderFile({
   sourceMap: 'css.map',
   file: './sass/main.scss',
-  outFile: 'public/css/main.css',
   success: function (css, map) {
     console.log("SUCCESS");
     //outFile: 'public/css/main.css'
   },
   error: function (error) {
     console.error(error);
-  }
+  },
+  //includePaths: bourbon.with('sass'),
+  //includePaths: bourbon.includePaths,
+  outputStyle: 'compressed',
+  outFile: 'public/css/main.css'
 });
 
 app.get('/', function(req, res){

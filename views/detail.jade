@@ -1,12 +1,12 @@
-li.detail.type
+li.detail(class="#{card.type}")
   figure
     .detail-info
-      .detail-image(style="background-image: url('img/wine_cellar_square.jpg')")
+      .detail-image(style="background-image: url('#{card.img}')")
         h1= card.output
       .detail-metadata
         h3= card.name
+        p.sensor-type #{card.type} Sensor
         p.last-updated 10 minutes ago
-        p.sensor-type Moisture Sensor
       
     .ct-chart
     .detail-actions
@@ -15,7 +15,7 @@ li.detail.type
         button.entypo-phone.is-on
         button.entypo-chat.is-off
         button.entypo-monitor.is-off
-      .sensor-info 10 minutes ago.
+      //- .sensor-info 10 minutes ago.
 
 //- li.type
 //-   figure

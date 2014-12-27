@@ -13,7 +13,7 @@ head
     meta(name='author', content='David Phillips')
     link(rel='shortcut icon', href='../favicon.ico')
     link(rel='stylesheet', type='text/css', href='css/main.css')
-    link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", rel="stylesheet")
+    //-link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", rel="stylesheet")
     //-link(rel='stylesheet', type='text/css', href='css/component.css')
     script(src='js/modernizr.custom.js')
     
@@ -45,26 +45,26 @@ head
             // for Masonry column width
             each card in readings
               include card.jade
-            li
-              figure
-                img(src='img/thumb/1.png', alt='img01')
-                | 
-                figcaption
-                  h3 Letterpress asymmetrical
-                  p Chillwave hoodie ea gentrify aute sriracha consequat.
+            //- li
+            //-   figure
+            //-     img(src='img/thumb/1.png', alt='img01')
+            //-     | 
+            //-     figcaption
+            //-       h3 Letterpress asymmetrical
+            //-       p Chillwave hoodie ea gentrify aute sriracha consequat.
         // // grid-wrap
         section.slideshow
           ul
             each card in readings
               include detail.jade
-            li
-              figure
-                figcaption
-                  h3 Letterpress asymmetrical
-                  p
-                    | Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.
-                | 
-                img(src='img/large/1.png', alt='img01')
+            //- li
+            //-   figure
+            //-     figcaption
+            //-       h3 Letterpress asymmetrical
+            //-       p
+            //-         | Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.
+            //-     | 
+            //-     img(src='img/large/1.png', alt='img01')
           nav
             span.entypo-left-open-big.nav-prev
             span.entypo-right-open-big.nav-next
@@ -81,6 +81,8 @@ head
     script.
       new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 
+      
+
       new Chartist.Line('.ct-chart', {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
         series: [
@@ -93,3 +95,17 @@ head
         height: 250,
         showArea: true
       });
+
+      //var actionToggle = function(){
+      //document.getElementById('button').on('click', function(){
+        //- if(class === 'is-on'){
+        //-   $(this).removeClass('is-on');
+        //-   $(this).addClass('is-off');
+        //- } else if(class === 'is-off') {
+        //-   $(this).removeClass('is-off');
+        //-   $(this).addClass('is-on');
+        //- }
+      //});
+      //}
+
+

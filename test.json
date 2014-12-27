@@ -1,7 +1,7 @@
 [ 
    {
       "id":1,
-      "type":"temp",
+      "type":"temperature",
       "name":"Wine Cellar",
       "entypo":"entypo-adjust",
       "img": "img/wine_cellar_temp.jpg",
@@ -29,7 +29,7 @@
       "name":"Garage",
       "entypo":"entypo-gauge",
       "img": "img/garage_door_temp.jpg",
-      "output":"Open"
+      "output":"Closed"
    }
 
 ]

@@ -1,9 +1,12 @@
 li.card(class="#{card.type}")
     figure
-        img(src="img/wine_cellar_square.jpg")
+        img(src="#{card.img}")
+        //- bottom half
         .details
+            //- left half
             .type(class= card.entypo)
-            h2= card.output
+                h2= card.output
+            //- right half
             .info
                 p.name= card.name
                 p.update-time 10 min ago
